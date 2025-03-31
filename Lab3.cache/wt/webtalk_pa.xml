@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Mon Mar 31 09:03:04 2025">
+<application name="pa" timeStamp="Mon Mar 31 10:14:53 2025">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="fe7a25d9e91e455b8354570ccac56868" type="ProjectID"/>
 <property name="ProjectIteration" value="62" type="ProjectIteration"/>
@@ -27,7 +27,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditDelete" value="7" type="JavaHandler"/>
 <property name="EditPaste" value="1" type="JavaHandler"/>
 <property name="EditProperties" value="1" type="JavaHandler"/>
-<property name="FileExit" value="25" type="JavaHandler"/>
+<property name="FileExit" value="26" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="1" type="JavaHandler"/>
 <property name="LaunchProgramFpga" value="61" type="JavaHandler"/>
 <property name="MakeRSBConnection" value="1" type="JavaHandler"/>
@@ -77,7 +77,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ConstraintsChooserPanel_CREATE_FILE" value="4" type="GuiHandlerData"/>
 <property name="CreateConstraintsFilePanel_FILE_NAME" value="3" type="GuiHandlerData"/>
 <property name="CreateSrcFileDialog_FILE_NAME" value="11" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="433" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="436" type="GuiHandlerData"/>
 <property name="FilterToolBar_SHOW_ALL" value="2" type="GuiHandlerData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="332" type="GuiHandlerData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="1" type="GuiHandlerData"/>
@@ -201,9 +201,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="WaveformView_FIND" value="1" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="51" type="GuiMode"/>
+<property name="GuiMode" value="4" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="39" type="TclMode"/>
+<property name="TclMode" value="1" type="TclMode"/>
 </item>
 </section>
 </application>
