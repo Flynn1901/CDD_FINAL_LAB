@@ -1,0 +1,28 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Starting 8-bit CLA Testbench
+--------------------------------------------------
+Test case 1 passed: 03 + 05 + 0 = 08, carry = 0
+Test case 2 passed: 03 + 05 + 1 = 09, carry = 0
+Test case 3 passed: ff + 01 + 0 = 00, carry = 1
+Test case 4 passed: ff + 00 + 1 = 00, carry = 1
+Test case 5 passed: 37 + 45 + 0 = 7c, carry = 0
+Test case 6 passed: 7f + 01 + 0 = 80, carry = 0
+Test case 7 passed: 80 + 80 + 0 = 00, carry = 1
+Test case 8 passed: ff + ff + 0 = fe, carry = 1
+Test case 9 passed: ff + ff + 1 = ff, carry = 1
+Test case 10 passed: 00 + 00 + 0 = 00, carry = 0
+Test case 11 passed: 55 + aa + 0 = ff, carry = 0
+Test case 12 passed: 55 + aa + 1 = 00, carry = 1
+Test case 13 passed: 10 + 20 + 0 = 30, carry = 0
+Test case 14 passed: 18 + 24 + 1 = 3d, carry = 0
+Test case 15 passed: 20 + 28 + 0 = 48, carry = 0
+Test case 16 passed: 28 + 2c + 1 = 55, carry = 0
+Test case 17 passed: 30 + 30 + 0 = 60, carry = 0
+Test case 18 passed: 38 + 34 + 1 = 6d, carry = 0
+Test case 19 passed: 40 + 38 + 0 = 78, carry = 0
+Test case 20 passed: 48 + 3c + 1 = 85, carry = 0
+--------------------------------------------------
+All test cases passed!
+--------------------------------------------------
+$finish called at time : 230 ns : File "D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sim_1/new/CLA_tb.v" Line 195
