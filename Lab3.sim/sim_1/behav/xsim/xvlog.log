@@ -1,6 +1,8 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PROJECT/XILINX/Lab4_Final/Lab3.srcs/sources_1/new/PFA.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sources_1/new/CLA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CLA
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sources_1/new/PFA.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module PFA
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PROJECT/XILINX/Lab4_Final/Lab3.srcs/sim_1/new/tb_PFA.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module PFA_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PROJECT/XILINX/Lab4_Final/Lab3.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sim_1/new/CLA_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CLA_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PracticeProject/CDD_FinalProject/Lab3.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
