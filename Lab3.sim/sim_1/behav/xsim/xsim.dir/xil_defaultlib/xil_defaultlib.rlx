@@ -2,7 +2,9 @@
 2020.1
 May 27 2020
 20:09:33
-D:/PracticeProject/CDD_FinalProject/Lab3.sim/sim_1/behav/xsim/glbl.v,1743408753,verilog,,,,glbl,,,,,,,,
-D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sim_1/new/CLA_tb.v,1743445074,verilog,,,,CLA_tb,,,,,,,,
-D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sources_1/new/CLA.v,1743443756,verilog,,D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sources_1/new/PFA.v,,CLA,,,,,,,,
-D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sources_1/new/PFA.v,1743413953,verilog,,D:/PracticeProject/CDD_FinalProject/Lab3.srcs/sim_1/new/CLA_tb.v,,PFA,,,,,,,,
+D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.sim/sim_1/behav/xsim/glbl.v,1744554425,verilog,,,,glbl,,,,,,,,
+D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sim_1/new/CLA_CSA_tb.v,1744578078,verilog,,,,CLA_CSA_tb,,,,,,,,
+D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CLA.v,1744554425,verilog,,D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CLA_Block.v,,CLA,,,,,,,,
+D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CLA_Block.v,1744576786,verilog,,D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CSA_CLA.v,,CLA_Block,,,,,,,,
+D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CSA_CLA.v,1744578349,verilog,,D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/PFA.v,,CSA_CLA,,,,,,,,
+D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/PFA.v,1744554425,verilog,,D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sim_1/new/CLA_CSA_tb.v,,PFA,,,,,,,,
