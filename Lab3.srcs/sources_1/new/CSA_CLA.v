@@ -26,45 +26,37 @@ module CSA_CLA#(
     parameter CLA_NUM = (CSA_WIDTH/CLA_WIDTH)-1,
     parameter CLA_GROUP = CSA_WIDTH/CLA_WIDTH
     )(
-    input [CSA_WIDTH-1:0] opA,
-    input [CSA_WIDTH-1:0] opB,
-    input Cin,
-    output [CSA_WIDTH-1:0] Result,
-    output Cout
+    input [CSA_WIDTH-1:0] iopA,
+    input [CSA_WIDTH-1:0] iopB,
+    input iCin,
+    output [CSA_WIDTH-1:0] oSum,
+    output oCout
     );
-    wire [CLA_NUM-1:0] wCin_CLA;
     reg [CLA_WIDTH-1:0] rCLA_opA [0:CLA_GROUP-1];
     reg [CLA_WIDTH-1:0] rCLA_opB [0:CLA_GROUP-1];
-    
-    integer k;
-    always@(*)begin
-        wCin_CLA[0] = Cin;
-    end
+    reg [CSA_WIDTH-1:0] rCLA_Sum;
+    reg rCLA_Cout_01;
+    reg rCLA_Cout_12;
+    reg rCLA_Cout_23;
     
     integer i; 
     always@(*)begin
         for(i=0;i<CLA_GROUP;i=i+1)begin
-            rCLA_opA[i] = opA[i*CLA_WIDTH +: CLA_WIDTH];
-            rCLA_opB[i] = opB[i*CLA_WIDTH +: CLA_WIDTH];
+            rCLA_opA[i] = iopA[i*CLA_WIDTH +: CLA_WIDTH];
+            rCLA_opB[i] = iopB[i*CLA_WIDTH +: CLA_WIDTH];
         end
     end
-
-    genvar j;
-    generate
-    for(j=0;j<CLA_NUM;j=j+1)begin
-        CLA CLA_inst(
-            .
-        )
     
-    end
-    CLA CLA_inst(
-                    .iA(iA[i]),.iB(iB[i]),.iCarry(iCarry),.oSum(oSum[i]),
-                    .oP(w_oP[i]),.oG(w_oG[i])
-                    
-                    input wire [CLA_WIDTH-1:0] iA,iB,
-    input wire                  iCarry,
-    output wire [CLA_WIDTH-1:0] oSum,
-    output wire                 oCarry
-                );
-    
+    CLA CLA_inst_0(
+        .iA(rCLA_opA[0]),.iB(rCLA_opA[0]),.iCarry(iCin),.oSum(rCLA_Sum[7:0]),.oCarry(rCLA_Cout_01)
+    );
+    CLA_Block CLA_Block_inst_1(
+        .iCLA_opA(rCLA_opA[1]),.iCLA_opB(rCLA_opB[1]),.iCin(rCLA_Cout_01),.oCLA_Sum(rCLA_Sum[15:8]),.oCout(rCLA_Cout_12)
+    );
+    CLA_Block CLA_Block_inst_2(
+        .iCLA_opA(rCLA_opA[2]),.iCLA_opB(rCLA_opB[2]),.iCin(rCLA_Cout_12),.oCLA_Sum(rCLA_Sum[23:16]),.oCout(rCLA_Cout_23)
+    );
+    CLA_Block CLA_Block_inst_3(
+        .iCLA_opA(rCLA_opA[3]),.iCLA_opB(rCLA_opB[3]),.iCin(rCLA_Cout_23),.oCLA_Sum(rCLA_Sum[31:24]),.oCout(oCout)
+    );
 endmodule

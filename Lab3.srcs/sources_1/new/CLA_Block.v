@@ -50,7 +50,4 @@ module CLA_Block#(
     assign oCout = (iCin==0)?Cout_0:Cout_1;
     assign oCLA_Sum = (iCin==0)?Sum_0:Sum_1;
     
-    
-    
-    
 endmodule
