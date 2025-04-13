@@ -9,8 +9,8 @@
       "tool_version": "2020.1"
     },
     "design_tree": {
-      "Debounce_Switch_0": "",
-      "uart_top_0": ""
+      "uart_top_0": "",
+      "Debounce_Switch_0": ""
     },
     "ports": {
       "iClk": {
@@ -28,27 +28,6 @@
       }
     },
     "components": {
-      "Debounce_Switch_0": {
-        "vlnv": "xilinx.com:module_ref:Debounce_Switch:1.0",
-        "xci_name": "design_1_Debounce_Switch_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Debounce_Switch",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_Clk": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "i_Switch": {
-            "direction": "I"
-          },
-          "o_Switch": {
-            "direction": "O"
-          }
-        }
-      },
       "uart_top_0": {
         "vlnv": "xilinx.com:module_ref:uart_top:1.0",
         "xci_name": "design_1_uart_top_0_0",
@@ -71,6 +50,27 @@
             "direction": "O"
           }
         }
+      },
+      "Debounce_Switch_0": {
+        "vlnv": "xilinx.com:module_ref:Debounce_Switch:1.0",
+        "xci_name": "design_1_Debounce_Switch_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Debounce_Switch",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "i_Switch": {
+            "direction": "I"
+          },
+          "o_Switch": {
+            "direction": "O"
+          }
+        }
       }
     },
     "nets": {
@@ -83,8 +83,8 @@
       "i_Clk_0_1": {
         "ports": [
           "iClk",
-          "Debounce_Switch_0/i_Clk",
-          "uart_top_0/iClk"
+          "uart_top_0/iClk",
+          "Debounce_Switch_0/i_Clk"
         ]
       },
       "i_Switch_0_1": {
