@@ -34,10 +34,10 @@ module CSA_CLA#(
     );
     reg [CLA_WIDTH-1:0] rCLA_opA [0:CLA_GROUP-1];
     reg [CLA_WIDTH-1:0] rCLA_opB [0:CLA_GROUP-1];
-    reg [CSA_WIDTH-1:0] rCLA_Sum;
-    reg rCLA_Cout_01;
-    reg rCLA_Cout_12;
-    reg rCLA_Cout_23;
+    wire [CSA_WIDTH-1:0] wCLA_Sum;
+    wire wCLA_Cout_01;
+    wire wCLA_Cout_12;
+    wire wCLA_Cout_23;
     
     integer i; 
     always@(*)begin
@@ -48,15 +48,17 @@ module CSA_CLA#(
     end
     
     CLA CLA_inst_0(
-        .iA(rCLA_opA[0]),.iB(rCLA_opA[0]),.iCarry(iCin),.oSum(rCLA_Sum[7:0]),.oCarry(rCLA_Cout_01)
+        .iA(rCLA_opA[0]),.iB(rCLA_opA[0]),.iCarry(iCin),.oSum(wCLA_Sum[7:0]),.oCarry(rCLA_Cout_01)
     );
     CLA_Block CLA_Block_inst_1(
-        .iCLA_opA(rCLA_opA[1]),.iCLA_opB(rCLA_opB[1]),.iCin(rCLA_Cout_01),.oCLA_Sum(rCLA_Sum[15:8]),.oCout(rCLA_Cout_12)
+        .iCLA_opA(rCLA_opA[1]),.iCLA_opB(rCLA_opB[1]),.iCin(wCLA_Cout_01),.oCLA_Sum(wCLA_Sum[15:8]),.oCout(rCLA_Cout_12)
     );
     CLA_Block CLA_Block_inst_2(
-        .iCLA_opA(rCLA_opA[2]),.iCLA_opB(rCLA_opB[2]),.iCin(rCLA_Cout_12),.oCLA_Sum(rCLA_Sum[23:16]),.oCout(rCLA_Cout_23)
+        .iCLA_opA(rCLA_opA[2]),.iCLA_opB(rCLA_opB[2]),.iCin(wCLA_Cout_12),.oCLA_Sum(wCLA_Sum[23:16]),.oCout(rCLA_Cout_23)
     );
     CLA_Block CLA_Block_inst_3(
-        .iCLA_opA(rCLA_opA[3]),.iCLA_opB(rCLA_opB[3]),.iCin(rCLA_Cout_23),.oCLA_Sum(rCLA_Sum[31:24]),.oCout(oCout)
+        .iCLA_opA(rCLA_opA[3]),.iCLA_opB(rCLA_opB[3]),.iCin(wCLA_Cout_23),.oCLA_Sum(wCLA_Sum[31:24]),.oCout(oCout)
     );
+    
+    assign oSum = wCLA_Sum;
 endmodule
