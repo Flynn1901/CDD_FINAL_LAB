@@ -1,0 +1,44 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+  Test Case 1: PASSED
+A = 12345678, B = 87654321, Cin = 0
+Expected: 099999999, Got: 099999999 (Cout, Sum)
+-----------------------------------------
+  Test Case 2: PASSED
+A = 12345678, B = 87654321, Cin = 1
+Expected: 09999999a, Got: 09999999a (Cout, Sum)
+-----------------------------------------
+  Test Case 3: PASSED
+A = ffffffff, B = 00000001, Cin = 0
+Expected: 100000000, Got: 100000000 (Cout, Sum)
+-----------------------------------------
+  Test Case 4: PASSED
+A = ffffffff, B = 00000000, Cin = 1
+Expected: 100000000, Got: 100000000 (Cout, Sum)
+-----------------------------------------
+  Test Case 5: PASSED
+A = 3a7b59c2, B = 549d8e37, Cin = 0
+Expected: 08f18e7f9, Got: 08f18e7f9 (Cout, Sum)
+-----------------------------------------
+  Test Case 6: PASSED
+A = 00000000, B = 00000000, Cin = 0
+Expected: 000000000, Got: 000000000 (Cout, Sum)
+-----------------------------------------
+  Test Case 7: PASSED
+A = ffffffff, B = ffffffff, Cin = 1
+Expected: 1ffffffff, Got: 1ffffffff (Cout, Sum)
+-----------------------------------------
+  Test Case 8: PASSED
+A = 000000ff, B = 00000001, Cin = 0
+Expected: 000000100, Got: 000000100 (Cout, Sum)
+-----------------------------------------
+  Test Case 9: PASSED
+A = 0000ff00, B = 00000100, Cin = 0
+Expected: 000010000, Got: 000010000 (Cout, Sum)
+-----------------------------------------
+ Test Case 10: PASSED
+A = 00ffffff, B = 00000001, Cin = 0
+Expected: 001000000, Got: 001000000 (Cout, Sum)
+-----------------------------------------
+All tests completed
+$finish called at time : 210 ns : File "D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sim_1/new/CLA_CSA_tb.v" Line 158

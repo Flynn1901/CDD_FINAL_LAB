@@ -4,9 +4,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab
 INFO: [VRFC 10-311] analyzing module CLA_Block
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CSA_CLA.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module CSA_CLA
-INFO: [VRFC 10-2458] undeclared symbol rCLA_Cout_01, assumed default net type wire [D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CSA_CLA.v:51]
-INFO: [VRFC 10-2458] undeclared symbol rCLA_Cout_12, assumed default net type wire [D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CSA_CLA.v:54]
-INFO: [VRFC 10-2458] undeclared symbol rCLA_Cout_23, assumed default net type wire [D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CSA_CLA.v:57]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/PFA.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module PFA
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sim_1/new/CLA_CSA_tb.v" into library xil_defaultlib

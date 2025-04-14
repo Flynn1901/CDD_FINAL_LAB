@@ -34,8 +34,8 @@ module CLA_Block#(
     wire Cin_1;
     wire Cout_0;
     wire Cout_1;
-    wire Sum_0;
-    wire Sum_1;
+    wire [CLA_WIDTH-1:0] Sum_0;
+    wire [CLA_WIDTH-1:0] Sum_1;
     
     assign Cin_0 = 0;
     assign Cin_1 = 1;
