@@ -2,11 +2,11 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Mar 31 09:03:08 2025
-# Process ID: 4868
-# Current directory: D:/PROJECT/XILINX/CDD/Lab3/Lab3.runs/synth_1
-# Command line: vivado.exe -log mp_adder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mp_adder.tcl
-# Log file: D:/PROJECT/XILINX/CDD/Lab3/Lab3.runs/synth_1/mp_adder.vds
-# Journal file: D:/PROJECT/XILINX/CDD/Lab3/Lab3.runs/synth_1\vivado.jou
+# Start of session at: Wed Apr 16 11:17:01 2025
+# Process ID: 35492
+# Current directory: D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.runs/synth_1
+# Command line: vivado.exe -log uart_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_top.tcl
+# Log file: D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.runs/synth_1/uart_top.vds
+# Journal file: D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source mp_adder.tcl -notrace
+source uart_top.tcl -notrace

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/PROJECT/XILINX/CDD/Lab3/Lab3.runs/synth_1/mp_adder.tcl"
+  variable script "D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.runs/synth_1/uart_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
@@ -77,19 +78,24 @@ create_project -in_memory -part xc7z020clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/PROJECT/XILINX/CDD/Lab3/Lab3.cache/wt [current_project]
-set_property parent.project_path D:/PROJECT/XILINX/CDD/Lab3/Lab3.xpr [current_project]
+set_property webtalk.parent_dir D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.cache/wt [current_project]
+set_property parent.project_path D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_output_repo d:/PROJECT/XILINX/CDD/Lab3/Lab3.cache/ip [current_project]
+set_property ip_output_repo d:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/PROJECT/XILINX/CDD/Lab3/Lab3.srcs/sources_1/imports/new/full_adder.v
-  D:/PROJECT/XILINX/CDD/Lab3/Lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v
-  D:/PROJECT/XILINX/CDD/Lab3/Lab3.srcs/sources_1/new/mp_adder.v
+  D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CLA.v
+  D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CLA_Block.v
+  D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/CSA_CLA.v
+  D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/PFA.v
+  D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/mp_adder.v
+  D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/uart_rx.v
+  D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/uart_tx.v
+  D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/sources_1/new/uart_top.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -100,24 +106,24 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/PROJECT/XILINX/CDD/Lab3/Lab3.srcs/constrs_1/new/PYNQ-Z2v1.0.xdc
-set_property used_in_implementation false [get_files D:/PROJECT/XILINX/CDD/Lab3/Lab3.srcs/constrs_1/new/PYNQ-Z2v1.0.xdc]
+read_xdc D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/constrs_1/new/PYNQ-Z2v1.0.xdc
+set_property used_in_implementation false [get_files D:/PROJECT/XILINX/CDD_FINAL_LAB/Lab3.srcs/constrs_1/new/PYNQ-Z2v1.0.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top mp_adder -part xc7z020clg400-1
+synth_design -top uart_top -part xc7z020clg400-1
 OPTRACE "synth_design" END { }
 
 
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef mp_adder.dcp
+write_checkpoint -force -noxdef uart_top.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file mp_adder_utilization_synth.rpt -pb mp_adder_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file uart_top_utilization_synth.rpt -pb uart_top_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

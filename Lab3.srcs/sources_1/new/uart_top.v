@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module uart_top #(
     parameter OPERAND_WIDTH   = 512,
-    parameter ADDER_WIDTH     = 16,
+    parameter ADDER_WIDTH     = 32,
     parameter   NBYTES        = OPERAND_WIDTH/8,
     // values for the UART (in case we want to change them)
     parameter   CLK_FREQ      = 125_000_000,
