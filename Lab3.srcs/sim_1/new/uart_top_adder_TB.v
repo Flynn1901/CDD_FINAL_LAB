@@ -50,6 +50,8 @@ module tb_uart_top;
     // Wait a little for system stabilization
     #20;
     
+    send_operand(1,8'b01010101);
+    
     // Send operand A: 4 bytes (example: 8'h55)
     send_operand(NBYTES, 8'hff);
     

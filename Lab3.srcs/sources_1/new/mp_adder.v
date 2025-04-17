@@ -10,6 +10,7 @@ module mp_adder #(
       parameter N_ITERATIONS  = OPERAND_WIDTH / ADDER_WIDTH
     )
     (
+    input  wire                       iCmd,
     input  wire                       iClk,
     input  wire                       iRst,
     input  wire                       iStart,
@@ -86,7 +87,6 @@ module mp_adder #(
         .iCin(carry_in),
         .oSum(result),
         .oCout(carry_out)
-      
       );
 
 

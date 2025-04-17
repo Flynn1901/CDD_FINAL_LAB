@@ -40,20 +40,22 @@ module uart_top #(
   reg [OPERAND_WIDTH:0] rResult;//can store 64 bytes
   wire [OPERAND_WIDTH:0] wResult;//can store 64 bytes
   reg [OPERAND_WIDTH+7:0] rFinal;
+  reg [7:0]             rCMD;
   
   // State definition  
-  localparam s_IDLE         = 3'b000;
-  localparam s_RX1          = 3'b001;
-  localparam s_RX2          = 3'b010;
-  localparam s_TX           = 3'b011;
-  localparam s_WAIT_TX      = 3'b100;
-  localparam s_DONE         = 3'b101;
-  localparam s_CAL_START    = 3'b110;
-  localparam s_CAL          = 3'b111;
+  localparam s_IDLE         = 4'b0000;
+  localparam s_RX1          = 4'b0001;
+  localparam s_RX2          = 4'b0010;
+  localparam s_TX           = 4'b0011;
+  localparam s_WAIT_TX      = 4'b0100;
+  localparam s_DONE         = 4'b0101;
+  localparam s_CAL_START    = 4'b0110;
+  localparam s_CAL          = 4'b0111;
+  localparam s_CMD          = 4'b1000;
    
   // Declare all variables needed for the finite state machine 
   // -> the FSM state
-  reg [2:0]   rFSM;  
+  reg [3:0]   rFSM;  
   
   // Connection to UART TX (inputs = registers, outputs = wires)
   reg         rTxStart;
@@ -92,6 +94,7 @@ module uart_top #(
  (
     .iClk(iClk),
     .iRst(iRst),
+    .iCmd(rCmd),
     .iStart(rStart),
     .iOpA(rA),
     .iOpB(rB),
@@ -120,7 +123,17 @@ module uart_top #(
     begin
       case (rFSM)
         s_IDLE :
+            rFSM <= s_CMD;
+            
+        s_CMD:
+        begin
+        if(wRxDone==1)begin
+            rCMD <= wRxByte;  // Read the 1 byte command
             rFSM <= s_RX1;
+        end 
+        else
+            rFSM <= s_CMD;
+        end
           
         s_RX1:
         begin
