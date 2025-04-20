@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Wed Apr 16 11:21:09 2025
+| Date             : Sun Apr 20 12:53:40 2025
 | Host             : DESKTOP-3T9PBIE running 64-bit major release  (build 9200)
 | Command          : report_power -file uart_top_power_routed.rpt -pb uart_top_power_summary_routed.pb -rpx uart_top_power_routed.rpx
 | Design           : uart_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.132        |
+| Total On-Chip Power (W)  | 0.122        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.025        |
+| Dynamic (W)              | 0.015        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 83.5         |
-| Junction Temperature (C) | 26.5         |
+| Max Ambient (C)          | 83.6         |
+| Junction Temperature (C) | 26.4         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.013 |        3 |       --- |             --- |
-| Slice Logic    |     0.007 |     6079 |       --- |             --- |
-|   LUT as Logic |     0.007 |     1747 |     53200 |            3.28 |
-|   Register     |    <0.001 |     3716 |    106400 |            3.49 |
-|   CARRY4       |    <0.001 |        3 |     13300 |            0.02 |
-|   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |     0.005 |     3927 |       --- |             --- |
+| Slice Logic    |    <0.001 |     6712 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     2274 |     53200 |            4.27 |
+|   Register     |    <0.001 |     3715 |    106400 |            3.49 |
+|   CARRY4       |    <0.001 |      133 |     13300 |            1.00 |
+|   Others       |     0.000 |        7 |       --- |             --- |
+| Signals        |     0.001 |     4545 |       --- |             --- |
 | I/O            |    <0.001 |        4 |       125 |            3.20 |
 | Static Power   |     0.106 |          |           |                 |
-| Total          |     0.132 |          |           |                 |
+| Total          |     0.122 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.033 |       0.025 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.023 |       0.015 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -147,8 +147,8 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| uart_top        |     0.025 |
-|   MP_ADDER_INST |     0.015 |
+| uart_top        |     0.015 |
+|   MP_ADDER_INST |     0.007 |
 +-----------------+-----------+
 
 

@@ -21,6 +21,28 @@
 
 
 module ALU(
-
+    input [2:0] iCmd,
+    input [31:0] iopA,
+    input [31:0] iopB,
+    input iCin,
+    output [31:0] oSum,
+    output oCout
     );
+    
+    reg [31:0] rOperandA;
+    reg [31:0] rOperandB;
+    
+    reg [31:0] rSum;
+    reg rCout;
+    
+    always@(*) begin
+        rOperandA <= iopA;
+        rOperandB <= iopB;
+        rOperandB_Com <= ~rOperandB + 1;
+    end
+    
+    
+    
+    
+    
 endmodule

@@ -40,7 +40,7 @@ module uart_top #(
   reg [OPERAND_WIDTH:0] rResult;//can store 64 bytes
   wire [OPERAND_WIDTH:0] wResult;//can store 64 bytes
   reg [OPERAND_WIDTH+7:0] rFinal;
-  reg [7:0]             rCMD;
+  reg [7:0]             rCmd;
   
   // State definition  
   localparam s_IDLE         = 4'b0000;
@@ -128,7 +128,7 @@ module uart_top #(
         s_CMD:
         begin
         if(wRxDone==1)begin
-            rCMD <= wRxByte;  // Read the 1 byte command
+            rCmd <= wRxByte;  // Read the 1 byte command
             rFSM <= s_RX1;
         end 
         else
@@ -139,7 +139,7 @@ module uart_top #(
         begin
         if(rCnt<NBYTES)begin
             if(wRxDone==1)begin
-                $display("Now rBit is still smaller than NBYTES which is %h!", rCnt);
+//                $display("Now rBit is still smaller than NBYTES which is %h!", rCnt);
                 rBuffer <= {rBuffer[OPERAND_WIDTH-9:0], wRxByte};  // ? ֻ�� `wRxDone == 1` ʱд������
                 rCnt <= rCnt + 1;
                 rFSM <= s_RX1;
@@ -148,7 +148,7 @@ module uart_top #(
                 rFSM <= s_RX1;
         end
         else begin
-                $display("Reach the boundary");
+//                $display("Reach the boundary");
                 rA <= rBuffer;
                 rFSM <= s_RX2;
                 rCnt <= 0;
@@ -160,7 +160,7 @@ module uart_top #(
         begin
         if(rCnt<NBYTES)begin
             if(wRxDone==1)begin
-                $display("Now rBit is still smaller than NBYTES which is %h!", rCnt);
+//                $display("Now rBit is still smaller than NBYTES which is %h!", rCnt);
                 rBuffer <= {rBuffer[OPERAND_WIDTH-9:0], wRxByte};  // ? ֻ�� `wRxDone == 1` ʱд������
                 rCnt <= rCnt + 1;
                 rFSM <= s_RX2;
@@ -169,7 +169,7 @@ module uart_top #(
                 rFSM <= s_RX2;
         end
         else begin
-                $display("Reach the boundary");
+//                $display("Reach the boundary");
                 rB <= rBuffer;
                 rFSM <= s_CAL_START;
                 rCnt <= 0;

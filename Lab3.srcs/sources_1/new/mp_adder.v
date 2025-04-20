@@ -10,7 +10,7 @@ module mp_adder #(
       parameter N_ITERATIONS  = OPERAND_WIDTH / ADDER_WIDTH
     )
     (
-    input  wire                       iCmd,
+    input  wire [7:0]                 iCmd,
     input  wire                       iClk,
     input  wire                       iRst,
     input  wire                       iStart,
@@ -18,6 +18,8 @@ module mp_adder #(
     input  wire [OPERAND_WIDTH-1:0]   iOpB,
     output wire [OPERAND_WIDTH:0]     oRes,  
     output wire                       oDone);
+    
+    reg [OPERAND_WIDTH:0] rRes;
 
     // Describe an OPERAND_WIDTH-bit register for A
     wire [OPERAND_WIDTH-1:0] regA_D;
@@ -56,12 +58,20 @@ module mp_adder #(
     //   - the input iOpB
     //   - the output of register B shifted-right 
     reg          muxB_sel;
-    wire  [OPERAND_WIDTH-1:0] muxB_Out;
+    reg  [OPERAND_WIDTH-1:0] rmuxB_Out;
     
-    assign muxB_Out = (muxB_sel == 0) ? iOpB : { {ADDER_WIDTH{1'b0}}  , regB_Q[OPERAND_WIDTH-1:ADDER_WIDTH]};
+//    assign muxB_Out = (muxB_sel == 0) ? iOpB : { {ADDER_WIDTH{1'b0}}  , regB_Q[OPERAND_WIDTH-1:ADDER_WIDTH]};
+    
+    always@(*)begin
+        if(muxB_sel==0)begin
+            if(iCmd==8'b00000000) rmuxB_Out <= iOpB;
+            else rmuxB_Out <= ~iOpB+1;      
+        end
+        else rmuxB_Out <= { {ADDER_WIDTH{1'b0}}  , regB_Q[OPERAND_WIDTH-1:ADDER_WIDTH]};
+    end
     
     // connect the output of the multiplexer to the input of register B
-    assign regB_D = muxB_Out;
+    assign regB_D = rmuxB_Out;
 
     // Instantiate the combinational adder
     // Its inputs are two ADDER_WIDTH-bit operands and 1-bit carry-in
@@ -126,7 +136,16 @@ module mp_adder #(
     assign carry_in = muxCarryIn;
 
     // Describe the output signal oRes: it is the concatenation of output registers
-    assign oRes = { regCout, regResult};
+    always@(*)begin
+        if(iCmd==0) rRes <= { regCout, regResult};
+        else if(iCmd==1) rRes <= {0,regResult};
+        else begin
+            if(regResult[511]==1) rRes <= 0;
+            else rRes <= 1;        
+        end
+    end
+    
+    assign oRes = rRes;
 
     // FINITE STATE MACHINE
     
