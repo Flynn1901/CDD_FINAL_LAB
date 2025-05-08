@@ -39,14 +39,6 @@ module CSA_CLA#(
     wire wCLA_Cout_12;
     wire wCLA_Cout_23;
     
-//    integer i; 
-//    always@(*)begin
-//        for(i=0;i<CLA_GROUP;i=i+1)begin
-//            rCLA_opA[i] = iopA[i*CLA_WIDTH +: CLA_WIDTH];
-//            rCLA_opB[i] = iopB[i*CLA_WIDTH +: CLA_WIDTH];
-//        end
-//    end
-    
     assign rCLA_opA[0] = iopA[7:0];
     assign rCLA_opB[0] = iopB[7:0];
     assign rCLA_opA[1] = iopA[15:8];
