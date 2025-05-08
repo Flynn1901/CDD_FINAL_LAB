@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu May  8 23:45:29 2025
+# Process ID: 9228
+# Current directory: D:/PracticeProject/CDD_FINAL_LAB-master
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27368 D:\PracticeProject\CDD_FINAL_LAB-master\Lab3.xpr
+# Log file: D:/PracticeProject/CDD_FINAL_LAB-master/vivado.log
+# Journal file: D:/PracticeProject/CDD_FINAL_LAB-master\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/PracticeProject/CDD_FINAL_LAB-master/Lab3.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Software/Xilinx/Vivado/2020.1/data/ip'.
+update_compile_order -fileset sources_1
+reset_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-2266] Removing simulation data...
+INFO: [Vivado 12-2267] Reset complete
+reset_run synth_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu May  8 23:46:43 2025...

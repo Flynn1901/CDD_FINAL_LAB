@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Mar 31 10:19:39 2025
+# Process ID: 16748
+# Current directory: D:/PracticeProject/CDD_FinalProject
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22596 D:\PracticeProject\CDD_FinalProject\Lab3.xpr
+# Log file: D:/PracticeProject/CDD_FinalProject/vivado.log
+# Journal file: D:/PracticeProject/CDD_FinalProject\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/PracticeProject/CDD_FinalProject/Lab3.xpr
+update_compile_order -fileset sources_1
